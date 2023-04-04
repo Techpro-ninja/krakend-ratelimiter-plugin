@@ -27,11 +27,12 @@ docker run -it -p 8001:8001 test-v1
 ```
 
 At this point, you can check
-http://localhost:8001/v1/users/
-http://localhost:8001/v1/posts/
+
+1. [http://localhost:8001/v1/users/](http://localhost:8001/v1/users/)
+2. [http://localhost:8001/v1/posts/](http://localhost:8001/v1/posts/)
 
 To check bucket details
-http://localhost:8001/\_\_bucket-tracker
+[http://localhost:8001/\_\_bucket-tracker](http://localhost:8001/__bucket-tracker)
 
 # Krakend.json configuration
 
