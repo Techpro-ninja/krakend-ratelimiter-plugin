@@ -26,6 +26,13 @@ docker build . -t test-v1
 docker run -it -p 8001:8001 test-v1
 ```
 
+At this point, you can check
+http://localhost:8001/v1/users/
+http://localhost:8001/v1/posts/
+
+To check bucket details
+http://localhost:8001/\_\_bucket-tracker
+
 # Krakend.json configuration
 
 This is a **service level** plugin meaning it resides in the root of **krakend.json** file
