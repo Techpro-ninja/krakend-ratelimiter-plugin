@@ -1,0 +1,51 @@
+{
+    "$schema": "https://www.krakend.io/schema/v3.json",
+    "version": 3,
+    "name": "krakend-ratelimiter-plugin",
+    "timeout": "3000ms",
+    "cache_ttl": "300s",
+    "plugin": {
+        "pattern": ".so",
+        "folder": "/etc/krakend/plugins/"
+    },
+    "endpoints": [
+        {
+            "endpoint": "/v1/users/",
+            "method": "GET",
+            "backend": [
+                {
+                    "url_pattern": "/public/v2/users",
+                    "encoding": "json",
+                    "sd": "static",
+                    "method": "GET",
+                    "disable_host_sanitize": false,
+                    "host": ["https://gorest.co.in"]
+                }
+            ]
+        },
+        {
+            "endpoint": "/v1/posts/",
+            "method": "GET",
+            "backend": [
+                {
+                    "url_pattern": "/public/v2/posts",
+                    "encoding": "json",
+                    "sd": "static",
+                    "method": "GET",
+                    "disable_host_sanitize": false,
+                    "host": ["https://gorest.co.in"]
+                }
+            ]
+        }
+    ],
+    "output_encoding": "no-op",
+    "port": 8001,
+    "extra_config": {
+        "plugin/http-server": {
+            "name": ["krakend-ratelimiter-plugin"],
+            "krakend-ratelimiter-plugin": {
+                "trackerPath": "/__bucket-tracker"
+            }
+        }
+    }
+}
