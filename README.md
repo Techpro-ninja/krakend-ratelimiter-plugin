@@ -1,6 +1,8 @@
 # Custom KrakenD Ratelimiter Plugin
 
-This is a custom Krakend Ratelimiter Plugin for demonstration
+This is a custom Krakend Ratelimiter Plugin for demonstration.
+
+Read the full blog here [https://techpro.ninja/krakend-plugin-golang-tutorial/](https://techpro.ninja/krakend-plugin-golang-tutorial/)
 
 ## Building the plugin Steps
 
